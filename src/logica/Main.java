@@ -12,6 +12,5 @@ public class Main {
         Principal principal = new Principal(control);
         principal.setVisible(true);
         principal.setLocationRelativeTo(null);
-    }
-    
+    }   
 }

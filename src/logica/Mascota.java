@@ -18,7 +18,7 @@ public class Mascota implements Serializable {
     private Boolean alergico;
     private Boolean atencion_especial;
     private String observaciones;
-     private String nombre_duenio;
+    private String nombre_duenio;
     private String celular_duenio;
 
     public Mascota() {

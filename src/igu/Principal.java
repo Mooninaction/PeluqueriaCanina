@@ -1,6 +1,7 @@
 package igu;
 
 import logica.Controladora;
+import logica.Mascota;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -340,15 +341,21 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        String num_cliente = txtNClient.getText();
-        String nombre = txtNombre.getText();
-        String raza = txtRaza.getText();
-        String nombre_duenio = txtNomDuenio.getText();
-        String telefono = txtTelefono.getText();
-        Boolean alergico =  (Boolean) btnAlergico.getSelectedItem();
-        Boolean antecion_especial = (Boolean) btnAtencionE.getSelectedItem();
-        String observaciones = txtObservaciones.getText();
         
+        int num_cliente = Integer.parseInt(txtNClient.getText());
+        String nombre_perro = txtNombre.getText();
+        String raza = txtRaza.getText();
+        String color = txtColor.getText();
+        String nombre_duenio = txtNomDuenio.getText();
+        Boolean alergico = (Boolean) btnAlergico.getSelectedItem();
+        Boolean atencion_especial = (Boolean) btnAtencionE.getSelectedItem();
+        String observaciones = txtObservaciones.getText();
+        String telefono = txtTelefono.getText();
+        
+        Mascota masc = new Mascota(num_cliente, nombre_perro, raza, color, 
+                alergico, atencion_especial, observaciones, nombre_duenio, telefono);
+        
+        control.altaMascota(masc);
 //Guardar todos los datos de la mascota y duenio
     }//GEN-LAST:event_btnGuardarActionPerformed
 

@@ -12,8 +12,7 @@ public class ControladoraPersistencia {
     
     //método para Alta
     public void crearMascota(Mascota masc){
-        try
-        {
+        try{
             mascJPA.create(masc);
         } catch (Exception e){
             System.out.println("No se pudo crear la mascota. Se encuentra vacio");
@@ -22,20 +21,16 @@ public class ControladoraPersistencia {
     
       //método para Eliminar
     public void eliminarMascota(Mascota masc){
-        try
-        {
+        try{
             mascJPA.destroy(masc.getNum_cliente());
-        } catch (NonexistentEntityException ex)
-        {
+        } catch (NonexistentEntityException ex){
             java.util.logging.Logger.getLogger(ControladoraPersistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
      public void eliminarMascota(int num_cliente){
-        try
-        {
+        try{
             mascJPA.destroy(num_cliente);
-        } catch (NonexistentEntityException ex)
-        {
+        } catch (NonexistentEntityException ex){
             java.util.logging.Logger.getLogger(ControladoraPersistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
      }
